@@ -3,6 +3,15 @@
 // in the html.
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
+  var saveBtn = $('.saveBtn');
+  saveBtn.on('click', function(event){
+    event.preventDefault();
+    var timeSlotID= $(this).parent().attr('id')
+    var task = $(this).siblings('.description').val()
+    console.log('this is my task:',task)
+    localStorage.setItem(timeSlotID,task);
+})
+
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
   // function? How can DOM traversal be used to get the "hour-x" id of the
@@ -14,10 +23,36 @@ $(function () {
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
+      function updateHourColor() {
+        var currentHour = dayjs().hour()
+        $('.time-block').each(function(){
+          var blockHour = parseInt($(this).attr('id').split('-')[1])
+          if(blockHour < currentHour) {
+            $(this).addClass('past')
+          } else if (blockHour === currentHour) {
+            $(this).addClass('present')
+          } else {
+            $(this).addClass('future')
+          }
+        })
+      }
+      updateHourColor()
+
   //
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
+        for(var i =9; i <= 17; i++) {
+          $('#hour-'+ i + ' .description').val(localStorage.getItem('hour-' + i))
+        }
+  // myPseudoCode: local storage set items
   //
   // TODO: Add code to display the current date in the header of the page.
+// myPseudoCode: get the time via dayJS. make a variable
+var today = dayjs();
+// myPseudoCode: Select the id for the p tag in the header set for the date. 
+// have the text 
+$('#currentDay').text(today.format('MMMM D, YYYY'));
+
 });
+
