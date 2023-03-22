@@ -1,18 +1,36 @@
-# Work-Day-Scheduler
-Challenge5
-
-
 # 05 Third-Party APIs: Work Day Scheduler
+Challenge 5
 
-## Your Task
+# Live Deployment Link
+https://tylersmith2614.github.io/Work-Day-Scheduler/
 
-Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+
+
+
+# ScreenShots
+![Alt text](Assets/Challenge%205%20Screenshot%201.png)
+![Alt text](Assets/Challenge%205%20Screenshot%202.png)
+![Alt text](Assets/Challenge%205%20Screenshot%203.png)
+
+
+# Note of Help with Source Code
+I received help with source code from my Coding tutor Rene Trevino on writing the 
+Javascript functions for past, present, future and local storage. Received help 
+from the class TA Eric O. on Pseudocoding and adding the current date via day.js. 
+Received help from classmate Ryan Kang on writing the function for the Event
+Listener for the save buttons.
+
+## Description
+
+Challenge 5.  I was given code to refracter and add to. Added html div blocks for each hour of the work day.  Added Javascript code to make an event listener for the save button, save the values to local storage, and pull the value from local storage back to blocks, added the current date at the top of page, and wrote a function with a if statement to add classes to each hour that are either past, present or future. 
+
+ Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
 
 You'll need to use the [Day.js](https://day.js.org/en/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Day.js in the browser.
 
 ## User Story
 
-```md
+
 AS AN employee with a busy schedule
 I WANT to add important events to a daily planner
 SO THAT I can manage my time effectively
